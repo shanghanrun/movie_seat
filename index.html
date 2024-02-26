@@ -39,6 +39,7 @@
         height: 90%;
         background-color: #ddd;
         border: 1px solid #888;
+        border-radius: 3px;
         cursor: pointer;
         z-index: 2;
     }
@@ -48,7 +49,34 @@
     }
 
     .occupied {
-        background-color: blue;
+        background-color: rgb(102, 102, 246);
+    }
+
+    .hidden {
+        border: none;
+        background-color: transparent;
+        color: transparent;
+    }
+
+    .screen {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    #screen {}
+
+    #reserved {
+        position: absolute;
+        right: 50px;
+        top: 20px;
+        padding: 10px;
+        background-color: rgb(102, 102, 246);
+        border-radius: 10px;
     }
 </style>
 
@@ -66,7 +94,10 @@
     <body>
         <div class="container">
             <h2>영화 좌석 예약</h2>
-            <h3>Screen</h3>
+            <div class="screen">
+                <h2 id="screen">Screen</h2>
+                <div id="reserved">예약석</div>
+            </div>
             <div class="seats-container"></div>
             <h3 class="result"></h3>
         </div>
